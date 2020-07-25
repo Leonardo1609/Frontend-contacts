@@ -2,6 +2,7 @@ import React from 'react'
 
 const Contact = ({ contact }) => {
     const { name, phone, email, contactType } = contact;
+
     return ( 
         <div className="card">
             <div className="card-header">

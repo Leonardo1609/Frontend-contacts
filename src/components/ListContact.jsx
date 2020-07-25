@@ -19,9 +19,9 @@ const ListContact = () => {
             <div className="col-6">
             {
                 contacts ?
-                contacts.map( contact => (
+                contacts.map( ( contact, i ) => (
                     <Contact 
-                        key = { contact._id }
+                        key = { contact._id || i + 1 }
                         contact = { contact }
                     />
                 ))

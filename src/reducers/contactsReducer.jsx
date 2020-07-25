@@ -21,11 +21,18 @@ export default function( state = initialState, action ){
                 ...state,
                 loading: true
             }
+        case CREATE_CONTACT_SUCCESS:
+            return{
+                ...state,
+                loading: false,
+                error: null,
+                contacts: [ ...state.contacts, action.payload ]
+            }
         case GET_CONTACTS_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                error:false,
+                error:null,
                 contacts: action.payload 
             }
         default:
