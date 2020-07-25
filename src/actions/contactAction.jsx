@@ -51,7 +51,7 @@ export function getContactsAction(){
         dispatch( getContacts() );
         try {
             const result = await clienteAxios.get('/api/contacts');
-            dispatch( getContactsSuccess(result.data) );
+            dispatch( getContactsSuccess( result.data.contacts ) );
         } catch (error) {
             console.log(error);
             dispatch( getContactsError() )

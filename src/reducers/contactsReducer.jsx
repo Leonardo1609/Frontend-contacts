@@ -14,7 +14,7 @@ const initialState = {
 }
 
 export default function( state = initialState, action ){
-    switch( action.payload ){
+    switch( action.type ){
         case CREATE_CONTACT:
         case GET_CONTACTS:
             return {

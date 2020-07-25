@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getContactsAction } from '../actions/contactAction';
+import Contact from './Contact';
 
 
 const ListContact = () => {
@@ -12,13 +13,20 @@ const ListContact = () => {
         // eslint-disable-next-line
     }, []);
 
-    const contacts = useSelector( state => state.contacts );
-    console.log( contacts );
-
+    const contacts = useSelector( state => state.contacts.contacts );
     return (
         <div className="row d-flex justify-content-center mt-5">
             <div className="col-6">
-                <h1>List</h1>
+            {
+                contacts ?
+                contacts.map( contact => (
+                    <Contact 
+                        key = { contact._id }
+                        contact = { contact }
+                    />
+                ))
+                : null
+            }
             </div>
         </div>
     );
